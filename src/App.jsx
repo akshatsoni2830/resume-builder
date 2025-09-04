@@ -85,6 +85,11 @@ function App() {
       setIsDarkMode(JSON.parse(savedTheme));
     }
 
+    const savedPremiumFeatures = localStorage.getItem('showPremiumFeatures');
+    if (savedPremiumFeatures !== null) {
+      setShowPremiumFeatures(JSON.parse(savedPremiumFeatures));
+    }
+
     // Check for mobile device
     const isMobile = window.innerWidth <= 768;
     if (isMobile) {
@@ -111,6 +116,11 @@ function App() {
       document.documentElement.classList.remove('dark');
     }
   }, [isDarkMode]);
+
+  // Save premium features toggle to localStorage
+  useEffect(() => {
+    localStorage.setItem('showPremiumFeatures', JSON.stringify(showPremiumFeatures));
+  }, [showPremiumFeatures]);
 
   // Validate form data
   const validateFormData = (data) => {
@@ -200,7 +210,10 @@ function App() {
               
               {/* Premium Features Toggle */}
               <button
-                onClick={() => setShowPremiumFeatures(!showPremiumFeatures)}
+                onClick={() => {
+                  console.log('Premium toggle clicked, current state:', showPremiumFeatures);
+                  setShowPremiumFeatures(!showPremiumFeatures);
+                }}
                 className={`btn-secondary flex items-center space-x-2 transition-all duration-300 ${
                   showPremiumFeatures ? 'bg-purple-100 dark:bg-purple-900/20 border-purple-300 dark:border-purple-700' : ''
                 }`}
@@ -258,7 +271,10 @@ function App() {
             <div className="px-4 py-4 space-y-2">
               {/* Premium Features Toggle */}
               <button
-                onClick={() => setShowPremiumFeatures(!showPremiumFeatures)}
+                onClick={() => {
+                  console.log('Mobile premium toggle clicked, current state:', showPremiumFeatures);
+                  setShowPremiumFeatures(!showPremiumFeatures);
+                }}
                 className={`w-full btn-secondary flex items-center justify-center space-x-2 transition-all duration-300 ${
                   showPremiumFeatures ? 'bg-purple-100 dark:bg-purple-900/20 border-purple-300 dark:border-purple-700' : ''
                 }`}
@@ -307,6 +323,7 @@ function App() {
         {/* Premium Features Section */}
         {showPremiumFeatures && (
           <div className="mb-8 animate-fade-in">
+            {console.log('Premium features section rendering, showPremiumFeatures:', showPremiumFeatures)}
             <div className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-lg p-6 border border-purple-200 dark:border-purple-800">
               <div className="flex items-center space-x-2 mb-6">
                 <Target className="w-6 h-6 text-purple-600" />
