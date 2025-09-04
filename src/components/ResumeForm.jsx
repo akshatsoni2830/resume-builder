@@ -86,7 +86,7 @@ const ResumeForm = ({ resumeData, onUpdate }) => {
         <>
           <PersonalInfoSection 
             data={resumeData} 
-            onUpdate={updateSection} 
+            onUpdate={(newData) => onUpdate(newData)} 
           />
           
           <SummarySection 

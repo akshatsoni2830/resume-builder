@@ -3,7 +3,6 @@ import ResumeForm from './components/ResumeForm';
 import ResumePreview from './components/ResumePreview';
 import ThemeToggle from './components/ThemeToggle';
 import TemplateSelector from './components/TemplateSelector';
-import PDFUploader from './components/PDFUploader';
 import JobDescriptionMatcher from './components/JobDescriptionMatcher';
 import CoverLetterGenerator from './components/CoverLetterGenerator';
 import ResumeScorer from './components/ResumeScorer';
@@ -146,9 +145,9 @@ function App() {
     return Object.keys(errors).length === 0;
   };
 
-  const handleFormUpdate = (newData, skipValidation = false) => {
-    // Validate data before updating (skip validation for PDF uploads)
-    if (skipValidation || validateFormData(newData)) {
+  const handleFormUpdate = (newData) => {
+    // Validate data before updating
+    if (validateFormData(newData)) {
       setResumeData(newData);
     } else {
       console.log('Validation failed for data:', newData);
@@ -322,11 +321,6 @@ function App() {
               </div>
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {/* PDF Upload */}
-                <PDFUploader onPDFParsed={(data) => handleFormUpdate(data, true)} />
-                
-
-                
                 {/* Job Description Matcher */}
                 <JobDescriptionMatcher 
                   resumeData={resumeData} 

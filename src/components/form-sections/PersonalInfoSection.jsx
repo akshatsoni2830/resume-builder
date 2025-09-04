@@ -11,9 +11,11 @@ const PersonalInfoSection = ({ data, onUpdate }) => {
 
   return (
     <div className="section-card">
-      <div className="flex items-center space-x-2 mb-6">
-        <User className="w-6 h-6 text-primary-600" />
-        <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+      <div className="flex items-center space-x-3 mb-8">
+        <div className="p-2 bg-gradient-to-r from-primary-500 to-primary-600 rounded-lg">
+          <User className="w-6 h-6 text-white" />
+        </div>
+        <h2 className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent">
           Personal Information
         </h2>
       </div>
@@ -21,7 +23,7 @@ const PersonalInfoSection = ({ data, onUpdate }) => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Full Name */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
             Full Name *
           </label>
           <input
@@ -36,7 +38,7 @@ const PersonalInfoSection = ({ data, onUpdate }) => {
 
         {/* Email */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
             Email *
           </label>
           <div className="relative">
@@ -54,7 +56,7 @@ const PersonalInfoSection = ({ data, onUpdate }) => {
 
         {/* Phone */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
             Phone
           </label>
           <div className="relative">
@@ -71,7 +73,7 @@ const PersonalInfoSection = ({ data, onUpdate }) => {
 
         {/* Location */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
             Location
           </label>
           <div className="relative">
@@ -88,7 +90,7 @@ const PersonalInfoSection = ({ data, onUpdate }) => {
 
         {/* LinkedIn */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
             LinkedIn
           </label>
           <div className="relative">
@@ -105,7 +107,7 @@ const PersonalInfoSection = ({ data, onUpdate }) => {
 
         {/* Website */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
             Website
           </label>
           <div className="relative">

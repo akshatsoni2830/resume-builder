@@ -8,9 +8,11 @@ const SkillsSection = ({ data, onUpdate }) => {
 
   return (
     <div className="section-card">
-      <div className="flex items-center space-x-2 mb-6">
-        <Zap className="w-6 h-6 text-primary-600" />
-        <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+      <div className="flex items-center space-x-3 mb-8">
+        <div className="p-2 bg-gradient-to-r from-accent-500 to-accent-600 rounded-lg">
+          <Zap className="w-6 h-6 text-white" />
+        </div>
+        <h2 className="text-2xl font-bold bg-gradient-to-r from-accent-600 to-accent-700 bg-clip-text text-transparent">
           Skills & Languages
         </h2>
       </div>
@@ -18,7 +20,7 @@ const SkillsSection = ({ data, onUpdate }) => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Technical Skills */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
             Technical Skills
           </label>
           <textarea
@@ -34,7 +36,7 @@ const SkillsSection = ({ data, onUpdate }) => {
 
         {/* Soft Skills */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
             Soft Skills
           </label>
           <textarea
@@ -50,7 +52,7 @@ const SkillsSection = ({ data, onUpdate }) => {
 
         {/* Languages */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
             Languages
           </label>
           <textarea
