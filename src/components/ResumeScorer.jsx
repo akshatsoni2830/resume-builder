@@ -51,7 +51,7 @@ const ResumeScorer = ({ resumeData, isVisible = true }) => {
       setSuggestions(calculatedSuggestions);
       setIsAnalyzing(false);
     }, 2000);
-  }, [resumeData]);
+  }, [resumeData, calculateScores]);
 
   useEffect(() => {
     if (resumeData && isVisible) {

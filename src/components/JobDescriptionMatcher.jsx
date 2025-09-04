@@ -75,7 +75,7 @@ const JobDescriptionMatcher = ({ resumeData, isEnabled }) => {
 
     // Cap at 100
     return Math.min(100, Math.round(percentage + score));
-  }, [jobDescription, resumeData]);
+  }, [jobDescription, resumeData, atsKeywords.technical, atsKeywords.soft, atsKeywords.methodologies]);
 
   const findMissingKeywords = useCallback(() => {
     if (!jobDescription.trim() || !resumeData) return [];
@@ -104,7 +104,7 @@ const JobDescriptionMatcher = ({ resumeData, isEnabled }) => {
     });
 
     return missing.slice(0, 10); // Limit to top 10 missing keywords
-  }, [jobDescription, resumeData]);
+  }, [jobDescription, resumeData, atsKeywords.technical, atsKeywords.soft, atsKeywords.methodologies]);
 
   const generateSuggestions = useCallback(() => {
     const sugg = [];
@@ -154,7 +154,7 @@ const JobDescriptionMatcher = ({ resumeData, isEnabled }) => {
       setMissingKeywords([]);
       setSuggestions([]);
     }
-  }, [jobDescription, resumeData, isEnabled]);
+  }, [jobDescription, resumeData, isEnabled, analyzeMatch]);
 
   const getScoreColor = (score) => {
     if (score >= 80) return 'text-green-600';
